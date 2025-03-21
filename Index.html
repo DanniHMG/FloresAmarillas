@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Lucero ✨</title>
+    <link rel="stylesheet" href="DATOS/css/style.css">
+    <link rel="icon" href="DATOS/img/flowers.png" type="image/x-icon">
+    <style>
+        /* Fondo oscuro con un degradado romántico */
+        body {
+            font-family: 'Cursive', sans-serif;
+            background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+
+        /* Animación de letras con brillo */
+        .greetings span {
+            font-size: 60px;
+            font-weight: bold;
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.5s ease-in-out forwards, glow 1.5s infinite alternate;
+        }
+
+        .greetings span:nth-child(1) { animation-delay: 0.3s; }
+        .greetings span:nth-child(2) { animation-delay: 0.6s; }
+        .greetings span:nth-child(3) { animation-delay: 0.9s; }
+        .greetings span:nth-child(4) { animation-delay: 1.2s; }
+        .greetings span:nth-child(5) { animation-delay: 1.5s; }
+        .greetings span:nth-child(6) { animation-delay: 1.8s; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff1493; }
+            to { text-shadow: 0 0 15px #ff1493, 0 0 25px #ff69b4; }
+        }
+
+        /* Mensaje especial con efecto de máquina de escribir */
+        .description {
+            font-size: 24px;
+            margin-top: 20px;
+            opacity: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            animation: typing 3s steps(40, end) forwards, fadeInText 3s ease-in-out forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Botón con efecto flotante */
+        .button button {
+            background: #ff6f61;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+            animation: float 2s infinite alternate;
+        }
+
+        .button button:hover {
+            background: #ff4757;
+            transform: scale(1.1);
+        }
+
+        .button a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+
+        @keyframes float {
+            from { transform: translateY(0); }
+            to { transform: translateY(-10px); }
+        }
+
+        /* Corazones flotando */
+        .heart {
+            position: absolute;
+            bottom: 0;
+            color: #ff69b4;
+            font-size: 20px;
+            opacity: 0.6;
+            animation: floatHearts 5s linear infinite;
+        }
+
+        @keyframes floatHearts {
+            from { transform: translateY(0); opacity: 0.6; }
+            to { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="greetings">
+        <span>H</span>
+        <span>O</span>
+        <span>L</span>
+        <span>A</span>
+        <span> </span>
+        <span>A</span>
+        <span>M</span>
+        <span>O</span>
+        <span>R</span>
+        <span> ❤️</span>
+    </div>
+
+    <div class="description">
+        <span>Para la persona más especial en mi vida... ¡Tengo una sorpresa para ti,❤️ Lucero ❤️✨</span>
+    </div>
+
+    <div class="button">
+        <button>
+            <a href="DATOS/FLORES.html">CLICK AQUÍ 🌸</a>
+        </button>
+    </div>
+
+    <!-- Corazones animados -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
